@@ -1,5 +1,5 @@
 name:                vty
-version:             4.7.2
+version:             4.7.3
 license:             BSD3
 license-file:        LICENSE
 author:              AUTHORS
@@ -54,7 +54,6 @@ library
   exposed-modules:     Graphics.Vty
                        Graphics.Vty.Attributes
                        Graphics.Vty.DisplayRegion
-                       Graphics.Vty.Error
                        Graphics.Vty.Image
                        Graphics.Vty.Inline
                        Graphics.Vty.LLInput
