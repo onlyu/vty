@@ -217,7 +217,8 @@ initTermInput escDelay terminal = do
            , ("\DEL",(KBS,[])), ("\ESC\DEL",(KBS,[MMeta]))
 
              -- Special support for Enter
-             -- , ("\ESC\^J",(KEnter,[MMeta])), ("\^J",(KEnter,[])) 
+           , ("\ESC\^M",(KEnter,[MMeta]))
+	   , ("\^M",(KEnter,[])) 
            ]
          ]
 
