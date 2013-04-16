@@ -202,8 +202,8 @@ initTermInput escDelay terminal = do
 
            -- Ctrl+Char
            [ ([toEnum x],(KASCII y,[MCtrl]))
-              | (x,y) <- zip ([0..31]) ('@':['a'..'z']++['['..'_']),
-                y /= 'i' -- Resolve issue #3 where CTRL-i hides TAB.
+             | (x,y) <- zip ([0..31]) ('@':['a'..'z']++['['..'_']),
+             y /= 'i' -- Resolve issue #3 where CTRL-i hides TAB.
            ],
 
            -- Ctrl+Meta+Char
@@ -211,13 +211,14 @@ initTermInput escDelay terminal = do
 
            -- Special support
            [ -- special support for ESC
-             ("\ESC",(KEsc,[])) , ("\ESC\ESC",(KEsc,[MMeta])),
+             ("\ESC",(KEsc,[])) , ("\ESC\ESC",(KEsc,[MMeta]))
 
              -- Special support for backspace
-             ("\DEL",(KBS,[])), ("\ESC\DEL",(KBS,[MMeta])),
+           , ("\DEL",(KBS,[])), ("\ESC\DEL",(KBS,[MMeta]))
 
              -- Special support for Enter
-             ("\ESC\^J",(KEnter,[MMeta])), ("\^J",(KEnter,[])) ]
+             -- , ("\ESC\^J",(KEnter,[MMeta])), ("\^J",(KEnter,[])) 
+           ]
          ]
 
   eventThreadId <- forkIO $ inputToEventThread
